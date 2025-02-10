@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Read</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#23272e]">
+    <a href="http://localhost:3000" class="text-[#59c0ff] hover:text-blue-100 m-20 my-20">Go back to Home</a>
+    <div class="bg-[#404754] p-5 rounded-md my-5 mx-20 w-[90vw] h-auto">
+        <h2 class="text-[#1DA1F2] text-center text-2xl"><%= file.replace('.txt','') %></h2>
+        <p class="text-white text-lg m-10"><%= data %></p>
+    </div>
+    <div class="w-[90vw] mx-auto px-4 flex flex-wrap gap-6">
+        <% if(files.length > 0){%>
+            <% files.forEach((val) => {%>
+                <div class="bg-[#404754] p-5 rounded-md my-5 w-[25vw] h-auto">
+                    <p class="text-white text-xl"><%= val.replace('.txt','') %></p><br>
+                    <a href="/files/<%= val %>" class="text-[#59c0ff] hover:text-blue-100">Read more</a>
+                </div>
+            <%}) %>
+        <%} 
+        else{%>
+            <p class="mx-auto text-xl text-white">No saved task, Create one for seeing it</p>
+        <%}%>
+    </div>
+    
+    <a href="http://localhost:3000/remove/<%= file %>"><button class="my-5 bg-[#1DA1F2] hover:bg-[#59c0ff] mx-20 text-white py-3 px-8 font-semibold text-xl rounded-md cursor-pointer"
+            > Delete the current viewing File</button></a>
+            
+</body>
+</html>

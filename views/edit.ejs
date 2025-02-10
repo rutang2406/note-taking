@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#23272e]">
+    <div class="w-[90vw] mx-auto my-20">
+        <form action="/update" method="post">
+            <input type="text" name="title" value="<%= filename.replace('.txt','') %>" class="bg-[#404754] text-white px-5 py-3 rounded-md my-5 w-[100%] outline-none"  required>
+            <textarea name="content" class="bg-[#404754] text-white px-5 py-3 rounded-md w-[100%] py-[-100px] resize-none outline-none" required><%= data %></textarea>
+            <button type="submit" class="my-5 bg-[#1DA1F2] hover:bg-[#59c0ff] text-white py-3 px-8 font-semibold text-xl rounded-md cursor-pointer"
+            >Edit</button>
+        </form>
+    </div>
+</body>
+</html>
